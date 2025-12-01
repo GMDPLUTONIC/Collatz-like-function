@@ -23,12 +23,15 @@ def F(n):
             return x
 
 def G(n):
-    return reduce(lambda val, _: F(D(val)), range(n), n)
+    return reduce(lambda val, _: F(F(val)), range(n), n)
 
 def H(n):
-    return reduce(lambda val, _: G(D(val)), range(n), n)
+    return reduce(lambda val, _: G(G(val)), range(n), n)
 
 def J(n):
-    return reduce(lambda val, _: H(D(val)), range(n), n)
+    return reduce(lambda val, _: H(H(val)), range(n), n)
 
-print(J(J(J(J(99)))))
+def K(n):
+    return reduce(lambda val, _: J(J(val)), range(n), n)
+
+print(K(K(K(K(K(99))))))
