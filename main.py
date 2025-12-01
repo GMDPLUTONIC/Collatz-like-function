@@ -6,7 +6,7 @@ def D(n):
     elif n == 1:
         return n
     else:
-        return D(D(D(D(D(n-1)) - 1)))
+        return n ** D(D(D(D(D(n-1)) - 1)))
 
 def F(n):
     x = n
@@ -16,7 +16,7 @@ def F(n):
         if x % 2 == 0:
             x = x / 2
         else:
-            x = D(x)*D(3) + 1
+            x = D(x)**D(3) + 1
             y = y + n/(y+2)
 
         if y > n:
@@ -34,4 +34,4 @@ def J(n):
 def K(n):
     return reduce(lambda val, _: J(J(val)), range(n), n)
 
-print(K(K(K(K(K(99))))))
+print(K(K(K(K(K(K(99)))))))
