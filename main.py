@@ -6,7 +6,7 @@ def D(n):
     elif n == 1:
         return n
     else:
-        return n** D(n** D(n-1)**n) **n
+        return D(D(D(D(D(n-1)) - 1)))
 
 def F(n):
     x = n
@@ -14,7 +14,7 @@ def F(n):
     
     while True:
         if x % 2 == 0:
-            x = x // 2
+            x = x / 2
         else:
             x = D(x)*D(3) + 1
             y = y + n/(y+2)
