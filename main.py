@@ -4,7 +4,7 @@ def D(n):
     if n == 0:
         return 2 # 0^0 is undefined, but to make the function work, i'm making it return 2
     elif n == 1:
-        return n # this is powers
+        return n**n # this is n tetrated to 2 of n^n
     else:
         return n ** D(D(D(D(D(n-1))))) # this makes it grow faster than knuth up-arrow
 
